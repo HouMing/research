@@ -4,7 +4,7 @@ SRC=c
 
 vpath %.cpp $(SRC)/
 
-all:AddBinary 3Sum 3SumClosest
+all:AddBinary 3Sum 3SumClosest AddTwoNumbers
 
 3Sum:3Sum.o
 	bin/3Sum
@@ -14,6 +14,12 @@ all:AddBinary 3Sum 3SumClosest
 
 AddBinary:AddBinary.o
 	bin/AddBinary
+
+AddTwoNumbers:AddTwoNumbers.o
+	bin/AddTwoNumbers
+
+AddTwoNumbers.o:
+	$(CC) $(SRC)/AddTwoNumbers.cpp -o bin/AddTwoNumbers $(CFLAGS)
 
 AddBinary.o:
 	$(CC) $(SRC)/AddBinary.cpp -o bin/AddBinary $(CFLAGS)
