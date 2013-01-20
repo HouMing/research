@@ -14,6 +14,7 @@
  */
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include <limits.h>
 #include <math.h>
 #include <stdlib.h>
@@ -26,20 +27,38 @@ class Solution
   int threeSumClosest(vector<int> &num, int target)
   {
     vector<int>::size_type size = num.size();
-    num.
-    for (vector<long>::size_type i = 0 ; i < size; ++i) {
-      lnum[i] = num[i];
-    }
-    long ret;
-    long tmp;
-    ret = tmp = target + INT_MAX;
+    sort(num.begin(), num.end());
+    int ret,cur_sum,diff;
+    diff = INT_MAX;
     if (size < 3) {
-      return LONG_MIN + 1;
+      return LONG_MIN;
     }
-    for (vector<int>::size_type i = 0; i != size ; ++i) {
-      tmp = num[(i + size - 1 ) % size] + num[i] + num[(i + 1) % size]; 
-      ret = abs(tmp - target) < abs(ret - target) ? tmp : ret;
-      cout << tmp <<endl;
+    for (vector<int>::size_type i = 0; i != size-2 ; ++i) {
+      vector<int>::size_type l = i + 1;
+      vector<int>::size_type r = size - 1;
+      cur_sum = num[i] + num[l] + num[r];
+      while (l < r) {
+        cur_sum = num[i] + num[l] + num[r];
+        if (cur_sum < target) {
+          int min = target - cur_sum;
+          if (min < diff) {
+            diff = min;
+            ret = cur_sum;
+          }
+          ++l;
+        }
+        if (cur_sum > target) {
+          int min = cur_sum - target;
+          if (min < diff) {
+            diff = min;
+            ret = cur_sum;
+          }
+          --r;
+        }
+        if (cur_sum == target) {
+          return cur_sum;
+        }
+     }
     }
     return ret;
   }
@@ -47,18 +66,10 @@ class Solution
 
 int main() {
   cout << "3SumClosest" << endl;
-  vector<int> sum(9,0);
-  sum[0] = 4;
-  sum[1] = 0;
-  sum[2] = 5;
-  sum[3] = -5;
-  sum[4] = 3;
-  sum[5] = 3;
-  sum[6] = 0;
-  sum[7] = -4;
-  sum[8] = -5;
+  int l[] = {0, 1, 2};
+  vector<int> sum(l, l+3);
   Solution sln = Solution();
-  int ret = sln.threeSumClosest(sum, -1);
+  int ret = sln.threeSumClosest(sum, 3);
   cout << ret << endl;
   return 0;
 }
