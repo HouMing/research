@@ -6,7 +6,8 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-#include <system.h> 
+#include <a.out.h> 
+#include <stdlib.h>
 struct ListNode {
   int val;
   ListNode *next;
@@ -54,5 +55,5 @@ int main () {
   add(add(&l1, 4), 3);
   add(add(&l2, 5), 4);
   Solution sln;
-  sln.addTwoNumbers(l1, l2);
+  sln.addTwoNumbers(&l1, &l2);
 }
