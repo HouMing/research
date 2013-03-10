@@ -1,0 +1,1 @@
+ex1.exe i.cif flag01.qcif > flag01.txt
