@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpencvAllInOnes", "OpencvAllInOnes\OpencvAllInOnes.vcproj", "{6E7C9AFC-3E1C-4350-87A4-DCD7913DD340}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stitching", "Stitching\Stitching.vcproj", "{222DA8DC-B639-4D40-8975-C16B5E8C3FF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E7C9AFC-3E1C-4350-87A4-DCD7913DD340}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6E7C9AFC-3E1C-4350-87A4-DCD7913DD340}.Debug|Win32.Build.0 = Debug|Win32
+		{6E7C9AFC-3E1C-4350-87A4-DCD7913DD340}.Release|Win32.ActiveCfg = Release|Win32
+		{6E7C9AFC-3E1C-4350-87A4-DCD7913DD340}.Release|Win32.Build.0 = Release|Win32
+		{222DA8DC-B639-4D40-8975-C16B5E8C3FF6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{222DA8DC-B639-4D40-8975-C16B5E8C3FF6}.Debug|Win32.Build.0 = Debug|Win32
+		{222DA8DC-B639-4D40-8975-C16B5E8C3FF6}.Release|Win32.ActiveCfg = Release|Win32
+		{222DA8DC-B639-4D40-8975-C16B5E8C3FF6}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
