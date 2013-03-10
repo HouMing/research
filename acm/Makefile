@@ -1,25 +1,14 @@
-CXX ?= g++
+CXX := g++
 
 CXXFLAGS = -g -Wall -O0 -DFILE_OFFSET_BITS=64 
 LDFLAGS  = -g -static 
 
-SOURCES = 1000.cpp
+TARGETS = 1000 1001
 
-HEADERS =
+all: ${TARGETS}
 
-OBJECTS = $(SOURCES:.cpp=.o)
-
-TARGET := 1000
-
-all: ${TARGET}
-
-${TARGET}: ${OBJECTS}
-	${CXX} $^ $(LDFLAGS) -o bin/$@
-
-${OBJECTS}: ${HEADERS} Makefile
-
-.cpp.o:
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+${TARGETS}: %${TARGET:.o}: %.cpp
+	${CXX} ${CXXFLAGS} ${LDFLAGS} $< -o $@ 
 
 clean:
-	rm -rf *.o ${TARGET}
+	rm -rf *.o ${TARGETS}
