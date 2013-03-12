@@ -3,7 +3,7 @@ CXX := g++
 CXXFLAGS = -g -Wall -O0 -DFILE_OFFSET_BITS=64 
 LDFLAGS  = -g -static 
 
-TARGETS = 1000 1001
+TARGETS = 1000 1001 1002
 
 all: ${TARGETS}
 
