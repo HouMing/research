@@ -1,9 +1,9 @@
 CXX := g++
 
-CXXFLAGS = -g -Wall -O0 -DFILE_OFFSET_BITS=64 
+CXXFLAGS = -g -Wall -O0 -DFILE_OFFSET_BITS=64 -std=c++0x 
 LDFLAGS  = -g -static 
 
-TARGETS = 1000 1001 1002
+TARGETS = 1000 1001 1002 1_1_3 Elevator Financial LeapYear
 
 all: ${TARGETS}
 
