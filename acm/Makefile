@@ -11,7 +11,9 @@ TARGETS = 1000 \
           Financial \
           LeapYear \
 					QuickSum \
-					Pythagorean
+					Pythagorean \
+					GPA \
+					AscII
 
 all: ${TARGETS}
 
