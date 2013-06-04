@@ -13,12 +13,15 @@ TARGETS = 1000 \
 					QuickSum \
 					Pythagorean \
 					GPA \
-					AscII
+					AscII \
+					UglyClock \
+					HM323 \
+					HM323_2
 
 all: ${TARGETS}
 
 ${TARGETS}: %${TARGET:.o}: %.cpp
-	${CXX} ${CXXFLAGS} ${LDFLAGS} $< -o $@ 
+	${CXX} ${CXXFLAGS} ${LDFLAGS} $< -o out/$@ 
 
 clean:
-	rm -rf *.o ${TARGETS} core*
+	rm -rf *.o ${TARGETS} core* out/*
